@@ -1,107 +1,36 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>TVH Submission Portal</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6fa;
-            padding: 30px;
-            color: #333;
-        }
-        .container {
-            max-width: 720px;
-            margin: auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #6b21a8; /* Purple */
-        }
-        label {
-            font-weight: bold;
-        }
-        input[type="file"],
-        input[type="text"] {
-            padding: 8px;
-            width: 100%;
-            margin-top: 6px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        input[type="submit"] {
-            background-color: #f97316; /* Orange */
-            color: white;
-            padding: 10px 18px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #ea580c;
-        }
-        .logo {
-            display: block;
-            margin: 0 auto 20px auto;
-            height: 70px;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #555;
-            text-align: center;
-        }
+        body { font-family: Arial; text-align: center; margin: 40px; }
+        .logo { margin-bottom: 20px; }
+        .instructions { background: #fef9c3; padding: 20px; border-radius: 8px; border-left: 6px solid #facc15; text-align: left; max-width: 600px; margin: auto; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="https://thetechvoyagehub.com" target="_blank">
-  <img src="https://i.postimg.cc/tCfHv1kL/Tech-Voyage-Hub-Logo.jpg" alt="TVH Logo" class="logo" style="height: 70px; margin-bottom: 20px;">
-</a>
-        
-        <h2>📤 TechVoyageHub Project Submission Portal</h2>
-            
-<div style="background-color: #fef9c3; border-left: 6px solid #facc15; padding: 10px 20px; margin-top: 20px; border-radius: 8px;">
-    <strong>📌 Please Read Before Uploading:</strong>
-    <ul>
-        <li>Accepted Format: <code>.zip</code> file only</li>
-        <li>Max Size: 50MB</li>
-        <li>Your ZIP must include the following structure:
-            <ul>
-                <li><code>notebooks/</code> – Jupyter or Colab notebooks</li>
-                <li><code>src/</code> – Source code scripts or modules</li>
-                <li><code>docs/</code> – Additional documentation if available</li>
-                <li><code>README.md</code> – Minimum 30 words, must mention project, tech stack, and instructions</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<hr>
-
-        <h3>🔽 Submit Your Project ZIP</h3>
-        <form action="/validate_zip" method="POST" enctype="multipart/form-data">
-            <label>Select ZIP File:</label>
-            <input type="file" name="file" required>
-            <input type="submit" value="Validate ZIP">
-        </form>
-
-        <hr>
-
-        <h3>🔗 Submit Your GitHub Repo</h3>
-        <form action="/validate_github" method="POST">
-            <label>GitHub Repo URL:</label>
-            <input type="text" name="url" placeholder="https://github.com/username/repo" required>
-            <input type="submit" value="Validate GitHub Repo">
-        </form>
-
-        <footer>
-            Need help? Email us at <b>connect@techvoyagehub.in</b>
-        </footer>
+    <a href="https://thetechvoyagehub.com" target="_blank">
+      <img src="https://i.postimg.cc/tCfHv1kL/Tech-Voyage-Hub-Logo.jpg" alt="TVH Logo" class="logo" style="height: 70px;">
+    </a>
+    <h2 style="color: #6b21a8;">TechVoyageHub Project Submission Portal</h2>
+    <div class="instructions">
+        <strong>📌 Please Read Before Uploading:</strong>
+        <ul>
+            <li>Accepted Format: <code>.zip</code> file only</li>
+            <li>Max Size: 50MB</li>
+            <li>Filename format must be: <code>TVH_FullName_EmailPrefix.zip</code><br>
+                <small>Example: <code>TVH_Akash_Verma_akash123.zip</code></small>
+            </li>
+            <li>Your ZIP must include the following structure:
+                <ul>
+                    <li><code>notebooks/</code> – Jupyter or Colab notebooks</li>
+                    <li><code>src/</code> – Source code scripts or modules</li>
+                    <li><code>docs/</code> – Additional documentation if available</li>
+                    <li><code>README.md</code> – Minimum 30 words, must mention project, tech stack, and instructions</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
