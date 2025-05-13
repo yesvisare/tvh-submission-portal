@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+
+from flask import Flask, request, jsonify, render_template
 from validator_v2 import validate_zip_file
 from github_auto_intake import validate_github_repo
 
@@ -6,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Welcome to the TechVoyageHub Submission Portal!"
+    return render_template("index.html")
 
 @app.route('/validate_zip', methods=['POST'])
 def validate_zip():
@@ -20,8 +21,7 @@ def validate_zip():
 
 @app.route('/validate_github', methods=['POST'])
 def validate_github():
-    data = request.get_json()
-    url = data.get("url")
+    url = request.form.get("url")
     if not url:
         return jsonify({"success": False, "message": "GitHub URL missing."}), 400
     is_valid, msg = validate_github_repo(url)
