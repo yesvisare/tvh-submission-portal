@@ -1,19 +1,28 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TVH Submission Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVoyageHub Project Submission Portal</title>
     <style>
-        body { font-family: Arial; text-align: center; margin: 40px; }
-        .logo { margin-bottom: 20px; }
-        .instructions { background: #fef9c3; padding: 20px; border-radius: 8px; border-left: 6px solid #facc15; text-align: left; max-width: 600px; margin: auto; }
+        body { font-family: Arial, sans-serif; text-align: center; background: #f8f9fa; margin: 0; padding: 20px; }
+        h2 { color: #6b21a8; }
+        .logo { height: 70px; margin-bottom: 20px; }
+        .instructions { background-color: #fef9c3; border-left: 6px solid #facc15; padding: 20px; border-radius: 10px; max-width: 750px; margin: auto; text-align: left; }
+        form { margin-top: 30px; }
+        label { font-weight: bold; }
+        input[type="file"], input[type="text"] { margin: 10px 0; padding: 6px; width: 300px; }
+        .section-title { font-weight: bold; color: #3b0764; margin-top: 30px; text-align: left; max-width: 750px; margin: 30px auto 10px auto; }
+        button { padding: 10px 20px; background-color: #f97316; color: white; border: none; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
     <a href="https://thetechvoyagehub.com" target="_blank">
-      <img src="https://i.postimg.cc/tCfHv1kL/Tech-Voyage-Hub-Logo.jpg" alt="TVH Logo" class="logo" style="height: 70px;">
+        <img src="https://i.postimg.cc/tCfHv1kL/Tech-Voyage-Hub-Logo.jpg" alt="TVH Logo" class="logo">
     </a>
-    <h2 style="color: #6b21a8;">TechVoyageHub Project Submission Portal</h2>
+    <h2>TechVoyageHub Project Submission Portal</h2>
+
     <div class="instructions">
         <strong>📌 Please Read Before Uploading:</strong>
         <ul>
@@ -32,5 +41,21 @@
             </li>
         </ul>
     </div>
+
+    <div class="section-title">🔽 Submit Your Project ZIP</div>
+    <form action="/validate_zip" method="post" enctype="multipart/form-data">
+        <label for="zip_file">Select ZIP File:</label><br>
+        <input type="file" name="zip_file" id="zip_file" required><br>
+        <button type="submit">Validate ZIP</button>
+    </form>
+
+    <div class="section-title">🔗 Submit Your GitHub Repo</div>
+    <form action="/validate_github" method="post">
+        <label for="repo_url">GitHub Repo URL:</label><br>
+        <input type="text" name="repo_url" id="repo_url" placeholder="https://github.com/username/repo" required><br>
+        <button type="submit">Validate GitHub Repo</button>
+    </form>
+
+    <p style="margin-top: 40px; font-size: 0.9em;">Need help? Email us at <strong>connect@techvoyagehub.in</strong></p>
 </body>
 </html>
